@@ -1,0 +1,61 @@
+{% comment %}
+  Section: Product Measurements
+  Add this section to your product template so measurement options appear on every product.
+  The script at the bottom moves this block inside the product form so values are added to cart.
+{% endcomment %}
+
+<div id="product-measurements-section-wrapper" class="product-measurements-section">
+  {% render 'product-measurements',
+    title: section.settings.title,
+    unit_label: section.settings.unit_label,
+    show_optional_label: section.settings.show_optional_label
+  %}
+</div>
+
+<script>
+  (function() {
+    var wrapper = document.getElementById('product-measurements-section-wrapper');
+    var form = document.querySelector('form[action*="/cart/add"]');
+    if (wrapper && form) {
+      var submitBtn = form.querySelector('button[type="submit"], input[type="submit"]') || form.querySelector('[name="add"]');
+      form.insertBefore(wrapper, submitBtn ? submitBtn : form.lastChild);
+    }
+  })();
+</script>
+
+
+{
+  "name": "Product measurements",
+  "tag": "section",
+  "class": "section-product-measurements",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Enter Your Measurements"
+    },
+    {
+      "type": "select",
+      "id": "unit_label",
+      "label": "Unit",
+      "options": [
+        { "value": "inches", "label": "Inches" },
+        { "value": "cm", "label": "cm" }
+      ],
+      "default": "inches"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_optional_label",
+      "label": "Show “(optional)” on optional fields",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product measurements"
+    }
+  ]
+}
+

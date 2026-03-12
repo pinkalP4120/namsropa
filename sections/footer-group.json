@@ -1,0 +1,80 @@
+{
+  "type": "footer",
+  "name": "Footer",
+  "sections": {
+    "custom_liquid_ExwgGW": {
+      "type": "custom-liquid",
+      "name": "t:names.custom_liquid",
+      "settings": {
+        "custom_liquid": "<style>\n  .reviews-carousel {\n    position: relative;\n    overflow: hidden;\n    padding: 60px 20px;\n    background: linear-gradient(135deg, #f5e6e0 0%, #ffffff 100%);\n  }\n\n  .reviews-container {\n    max-width: 1200px;\n    margin: 0 auto;\n  }\n\n  .reviews-heading {\n    text-align: center;\n    margin-bottom: 50px;\n    font-size: 2.5rem;\n    font-weight: 700;\n    color: #2c2c2c;\n    font-family: var(--font-heading--family);\n  }\n\n  .carousel-wrapper {\n    position: relative;\n    overflow: hidden;\n  }\n\n  .carousel-track {\n    display: flex;\n    gap: 24px;\n    animation: scroll 10s linear infinite;\n    will-change: transform;\n  }\n\n  .carousel-track:hover {\n    animation-play-state: paused;\n  }\n\n  @keyframes scroll {\n    0% {\n      transform: translateX(0);\n    }\n    100% {\n      transform: translateX(-50%);\n    }\n  }\n\n  .review-card {\n    flex: 0 0 calc(33.333% - 16px);\n    min-width: 300px;\n    background: white;\n    border-radius: 12px;\n    padding: 30px;\n    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);\n    transition: all 0.3s ease;\n    border: 1px solid #f0e6e0;\n  }\n\n  .review-card:hover {\n    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);\n    transform: translateY(-4px);\n  }\n\n  .stars {\n    display: flex;\n    gap: 4px;\n    margin-bottom: 16px;\n    font-size: 1.2rem;\n  }\n\n  .star {\n    color: #c9a876;\n  }\n\n  .review-text {\n    font-size: 0.95rem;\n    line-height: 1.6;\n    color: #5a5a5a;\n    margin-bottom: 16px;\n    font-family: var(--font-body--family);\n  }\n\n  .reviewer-name {\n    font-weight: 600;\n    color: #2c2c2c;\n    font-size: 0.95rem;\n    font-family: var(--font-subheading--family);\n  }\n\n  @media (max-width: 768px) {\n    .reviews-heading {\n      font-size: 1.8rem;\n      margin-bottom: 30px;\n    }\n\n    .review-card {\n      flex: 0 0 calc(50% - 12px);\n      min-width: 250px;\n      padding: 20px;\n    }\n\n    .reviews-carousel {\n      padding: 40px 15px;\n    }\n  }\n\n  @media (max-width: 480px) {\n    .review-card {\n      flex: 0 0 100%;\n      min-width: 100%;\n    }\n\n    .reviews-heading {\n      font-size: 1.5rem;\n    }\n  }\n<\/style>\n\n<div class=\"reviews-carousel\">\n  <div class=\"reviews-container\">\n    <h2 class=\"reviews-heading\">Customer Reviews<\/h2>\n    \n    <div class=\"carousel-wrapper\">\n      <div class=\"carousel-track\">\n        <!-- Review 1 -->\n        <div class=\"review-card\">\n          <div class=\"stars\">\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n          <\/div>\n          <p class=\"review-text\">\"Absolutely stunning quality! The craftsmanship is exceptional and the attention to detail is remarkable. I've never felt more satisfied with a purchase.\"<\/p>\n          <p class=\"reviewer-name\">Sarah Mitchell<\/p>\n        <\/div>\n\n        <!-- Review 2 -->\n        <div class=\"review-card\">\n          <div class=\"stars\">\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n          <\/div>\n          <p class=\"review-text\">\"This is luxury at its finest. The design is elegant and timeless. Worth every penny. I've already recommended it to all my friends!\"<\/p>\n          <p class=\"reviewer-name\">James Chen<\/p>\n        <\/div>\n\n        <!-- Review 3 -->\n        <div class=\"review-card\">\n          <div class=\"stars\">\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n          <\/div>\n          <p class=\"review-text\">\"Exceeded all my expectations. The packaging was beautiful, the product arrived in perfect condition, and the quality is outstanding.\"<\/p>\n          <p class=\"reviewer-name\">Emma Rodriguez<\/p>\n        <\/div>\n\n        <!-- Review 4 -->\n        <div class=\"review-card\">\n          <div class=\"stars\">\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n          <\/div>\n          <p class=\"review-text\">\"I'm impressed with the quality and the customer service was fantastic. This is a brand I'll definitely be ordering from again.\"<\/p>\n          <p class=\"reviewer-name\">Michael Thompson<\/p>\n        <\/div>\n\n        <!-- Review 5 -->\n        <div class=\"review-card\">\n          <div class=\"stars\">\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n          <\/div>\n          <p class=\"review-text\">\"Truly a masterpiece. The attention to detail is incredible. This product has become my favorite possession. Highly recommended!\"<\/p>\n          <p class=\"reviewer-name\">Jessica Williams<\/p>\n        <\/div>\n\n        <!-- Review 6 -->\n        <div class=\"review-card\">\n          <div class=\"stars\">\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n          <\/div>\n          <p class=\"review-text\">\"The quality is unmatched. I've purchased from many luxury brands, and this stands out. Absolutely worth the investment.\"<\/p>\n          <p class=\"reviewer-name\">David Park<\/p>\n        <\/div>\n\n        <!-- Review 7 -->\n        <div class=\"review-card\">\n          <div class=\"stars\">\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n          <\/div>\n          <p class=\"review-text\">\"Elegant, sophisticated, and beautifully made. This is exactly what I was looking for. The craftsmanship is truly exceptional.\"<\/p>\n          <p class=\"reviewer-name\">Amanda Foster<\/p>\n        <\/div>\n\n        <!-- Review 8 -->\n        <div class=\"review-card\">\n          <div class=\"stars\">\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n          <\/div>\n          <p class=\"review-text\">\"I'm blown away by the quality and design. This product has exceeded my expectations in every way. Definitely a keeper!\"<\/p>\n          <p class=\"reviewer-name\">Christopher Lee<\/p>\n        <\/div>\n\n        <!-- Review 9 -->\n        <div class=\"review-card\">\n          <div class=\"stars\">\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n          <\/div>\n          <p class=\"review-text\">\"Outstanding quality and beautiful design. The attention to detail is remarkable. I couldn't be happier with my purchase!\"<\/p>\n          <p class=\"reviewer-name\">Victoria Bennett<\/p>\n        <\/div>\n\n        <!-- Duplicate for seamless loop -->\n        <div class=\"review-card\">\n          <div class=\"stars\">\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n            <span class=\"star\">★<\/span>\n          <\/div>\n          <p class=\"review-text\">\"Absolutely stunning quality! The craftsmanship is exceptional and the attention to detail is remarkable. I've never felt more satisfied with a purchase.\"<\/p>\n          <p class=\"reviewer-name\">Sarah Mitchell<\/p>\n        <\/div>\n      <\/div>\n    <\/div>\n  <\/div>\n<\/div>",
+        "color_scheme": "",
+        "section_width": "page-width",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "custom_liquid_YYcKnG": {
+      "type": "custom-liquid",
+      "name": "t:names.custom_liquid",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "",
+        "section_width": "page-width",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "footer_utilities_jLGE8U": {
+      "type": "footer-utilities",
+      "name": "t:names.utilities",
+      "settings": {
+        "section_width": "page-width",
+        "color_scheme": "scheme-footer-luxury",
+        "phone_number": "+1(307)3102686 (WhatsApp Only)",
+        "hours": "(Mon-Fri 8am to 4pm PST)",
+        "contact_link": "",
+        "contact_link_text": "Drop a message",
+        "show_sales_policy_column": true,
+        "sales_policy_link_1_text": "Payments & Shipping",
+        "sales_policy_link_1_url": "shopify:\/\/pages\/shipping-policy",
+        "sales_policy_link_2_text": "Privacy Policy",
+        "sales_policy_link_2_url": "shopify:\/\/policies\/privacy-policy",
+        "sales_policy_link_3_text": "Returns & Refunds",
+        "sales_policy_link_3_url": "shopify:\/\/pages\/return-policy",
+        "show_partner_column": true,
+        "partner_link_1_text": "Nam's Blogs",
+        "partner_link_1_url": "shopify:\/\/blogs\/news",
+        "partner_link_2_text": "FAQs",
+        "partner_link_2_url": "shopify:\/\/pages\/faqs",
+        "show_about_column": true,
+        "about_link_1_text": "Nam's Ropa",
+        "about_link_1_url": "shopify:\/\/pages\/about-us",
+        "about_link_2_text": "How Customization Works",
+        "about_link_2_url": "shopify:\/\/pages\/how-customization-works",
+        "about_link_3_text": "Size Chart",
+        "about_link_3_url": "shopify:\/\/pages\/size-chart",
+        "about_link_4_text": "How to Measure",
+        "about_link_4_url": "shopify:\/\/pages\/how-to-measure",
+        "show_social_media": true,
+        "facebook_url": "https:\/\/www.facebook.com\/share\/181LTgqCbd\/?mibextid=wwXIfr",
+        "twitter_url": "",
+        "pinterest_url": "https:\/\/pin.it\/3ofEiK2fX",
+        "tumblr_url": "",
+        "instagram_url": "https:\/\/www.instagram.com\/namsropa_global?igsh=MWZxdzBzdnp2YWJ4bg%3D%3D&utm_source=qr",
+        "show_policy_disclaimer": true,
+        "policy_disclaimer_text": "When you order from Nam's Ropa \/ you agree to the prevailing policies of Nam's Ropa.",
+        "show_tagline": true,
+        "tagline_title": "Nam's Ropa | Customized Clothing",
+        "tagline_subtitle": "To Your Size, Your Height, Your Style, Your Fabric.",
+        "company_name": "Nam's Ropa",
+        "padding-block-start": 20,
+        "padding-block-end": 48
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_ExwgGW",
+    "custom_liquid_YYcKnG",
+    "footer_utilities_jLGE8U"
+  ]
+}

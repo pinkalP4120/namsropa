@@ -1,0 +1,203 @@
+
+{% stylesheet %}
+    .gallery-blocks {
+    padding: 50px 0;
+}
+
+.gallery-blocks__header {
+    padding-bottom: 30px;
+}
+
+.collections-blocks__grid {
+    position: relative;
+    display: grid;
+    margin: 0 auto;
+    grid-gap: 20px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.collections-blocks__item {
+    position: relative;
+}
+
+.collections-blocks__image-wrapper {
+    overflow: hidden;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.collections-blocks__image-wrapper img {
+    width: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: all ease-in-out 0.3s 0s;
+    height: 100%;
+}
+
+.collections-blocks__item:hover .collections-blocks__image-wrapper img {
+    transform: scale(1.1);
+}
+
+.collections-blocks__content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+
+h3.collections-blocks__title {
+    font-size: 32px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+}
+
+.collections-blocks__text {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+    padding: 10px 0 0;
+}
+
+.collections-blocks__image-wrapper:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: #000;
+    background: linear-gradient(to top, rgb(0 0 0) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+}
+.collections-blocks-section {
+    display: block;
+    background-color: #eef1ea;
+    padding: 0 50px;
+    
+}
+.gallery-blocks__heading {
+    font-size: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 1100px) {
+    .collections-blocks__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }        
+}
+@media screen and (max-width: 800px) {
+    .collections-blocks__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }        
+    .collections-blocks-section {
+        display: block;
+        padding: 0 20px;
+    }
+}
+@media screen and (max-width: 479px) {
+    .collections-blocks__grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }        
+}
+{% endstylesheet %}
+
+
+
+<section class="gallery-blocks">
+  <div class="page-width">
+    {% if section.settings.section_heading != blank or section.settings.section_text != blank %}
+      <div class="gallery-blocks__header">
+        {% if section.settings.section_heading != blank %}
+          <h2 class="gallery-blocks__heading">{{ section.settings.section_heading }}</h2>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="collections-blocks__grid">
+        {% for block in section.blocks %}
+          <a class="collections-blocks__item" href="{{ block.settings.link }}" {{ block.shopify_attributes }}>
+            {% if block.settings.image != blank %}
+              <div class="collections-blocks__image-wrapper">
+                <img src="{{ block.settings.image |  image_url  }}" alt="{{ block.settings.image.alt }}" width="" height="">
+              </div>
+            {% endif %}
+            {% if block.settings.title != blank or block.settings.text != blank %}
+              <div class="collections-blocks__content">
+                {% if block.settings.title != blank %}
+                  <h3 class="collections-blocks__title">{{ block.settings.title }}</h3>
+                {% endif %}
+
+                {% if block.settings.text != blank %}
+                  <div class="collections-blocks__text">
+                    {{ block.settings.text }}
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Shop By Collections",
+  "tag": "section",
+  "class": "section collections-blocks-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Gallery item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+            "type": "url",
+            "id": "link",
+            "label": "Link" 
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Block title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop By Collections"      
+    }
+  ]
+}
+{% endschema %}
